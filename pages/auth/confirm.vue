@@ -1,23 +1,16 @@
 <script setup lang="ts">
 const user = useSupabaseUser()
 
-const route = useRoute<{
-  error?: string
-  error_description?: string
-}>()
+const route = useRoute()
 
-if (route.params.error) {
-  navigateTo('/auth/registration/error')
-}
-
-definePageMeta({
-  layout: 'auth',
-  public: true,
-})
+watch(user, () => {
+  if (user.value) {
+    // Redirect to protected page
+    return navigateTo('/')
+  }
+}, { immediate: true })
 </script>
 
 <template>
-  <div>
-    {{ user?.email || 'No user email' }}
-  </div>
+  <AuthErrorGithub v-if="route.query.error" />
 </template>

@@ -1,10 +1,16 @@
 <script setup lang="ts">
 definePageMeta({
   layout: 'auth',
-  public: true,
 })
 </script>
 
 <template>
-  <div>Error</div>
+  <AuthErrorContainer>
+    <div class="font-bold mb-4">
+      Something went wrong
+    </div>
+    <div>
+      Please try again later
+    </div>
+  </AuthErrorContainer>
 </template>
