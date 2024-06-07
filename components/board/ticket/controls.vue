@@ -13,8 +13,9 @@ const { data: votes } = await useRealtimeQuery(
 <template>
   <div class="border-t border-purple-900 p-2 flex min-h-14 items-center">
     <BoardTicketVotes :votes />
-    <div class="flex ml-auto">
+    <div class="flex ml-auto gap-1">
       <BoardTicketControlsButtonVote :ticket="props.ticket" />
+      <BoardTicketControlsButtonRemove :ticket="props.ticket" />
     </div>
   </div>
 </template>
