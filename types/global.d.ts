@@ -7,7 +7,7 @@ declare global {
   interface Lane {
     id: string
     name: string
-    boardId: string
+    board_id: string
   }
 
   interface Ticket {

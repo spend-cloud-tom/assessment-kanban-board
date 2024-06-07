@@ -1,8 +1,16 @@
 <script setup lang="ts">
+const route = useRoute('boards-id-lanes-laneId-tickets-add')
+
 const value = ref('')
 
-function save() {
+const client = useSupabaseClient()
 
+async function save() {
+  await client.from('tickets').insert({
+    lane_id: route.params.laneId,
+    content: value.value,
+  })
+  navigateTo(`/boards/${route.params.id}`)
 }
 </script>
 
