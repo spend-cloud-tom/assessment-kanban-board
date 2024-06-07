@@ -17,7 +17,7 @@ async function remove() {
 </script>
 
 <template>
-  <UTooltip content="Remove ticket">
+  <UTooltip text="Remove ticket">
     <UButton variant="outline" color="red" size="xs" :loading="loading" icon="i-heroicons-trash" @click="remove" />
   </UTooltip>
 </template>
